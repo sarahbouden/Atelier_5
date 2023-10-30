@@ -1,0 +1,19 @@
+<table border=3px >
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Deatails</th>
+    </tr>
+    {% set i = 0 %}
+    {% for a in authors %}
+        <tr>
+            <td>{{ a.id|upper }}</td>
+            <td>{{ a.username|upper }}</td>
+            <td>{{ a.email|upper }}</td>
+            <td><a href="{{path('showbyidauthor',{'id':a.id})}}">Details</a></td>
+        {% set i = i + 1 %}
+        </tr>
+    {% endfor %}
+</table>
+{{i}}

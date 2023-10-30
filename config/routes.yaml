@@ -1,0 +1,9 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+showbyidauthor:
+    path: '/showbyidauthor/{id}'
+    controller: 'App\Controller\AuthorController::showbyidauthor'
+editbook:
+    path: /editbook/{ref}
+    controller: App\Controller\YourControllerName::editbook

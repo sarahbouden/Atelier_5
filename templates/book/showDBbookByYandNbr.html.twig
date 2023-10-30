@@ -1,0 +1,27 @@
+{{form(f)}}
+<table border="3">
+    <tr>
+        <td>ref</td>
+        <td>title</td>
+        <td>category</td>
+        <td>publication date</td>
+        <td>author</td>
+        <td>author Number of books</td>
+        <td>edit</td>
+        <td>delete</td>
+    </tr>
+    {% for a in books %}
+    <tr>
+        <td>{{a.ref}}</td>
+        <td>{{a.title}}</td>
+        <td>{{a.category}}</td>
+        <td>{{a.getPublicDate()|date('Y-m-d')}}</td> 
+        <td>{{a.Author.username}}</td>
+        <td>{{a.Author.nbrlivre}}</td>
+        
+        <td><a href="{{path('editbook',{'ref':a.ref})}}">edit</a></td>
+        <td><a href="{{path('deletebook',{'ref':a.ref})}}">delete</a></td>
+        
+    </tr>
+    {% endfor %}
+</table>
